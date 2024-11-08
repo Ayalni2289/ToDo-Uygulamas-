@@ -2,7 +2,7 @@ class KartOzellikleri:Kartım{
     
     private List<Kartım> kartlar = new List<Kartım>();
 
-    public void KartEkle(){
+    static public void KartEkle(){
         Console.WriteLine("Baslik Giriniz: ");
         string baslik = Console.ReadLine();
         Baslik = baslik;
@@ -14,7 +14,7 @@ class KartOzellikleri:Kartım{
         AtananKisiID.Add(kisiID, "Kart Sahibi");
         kartlar.Add(new Kartım(){Baslik = Baslik, Icerik = Icerik, AtananKisiID = AtananKisiID});
     }
-    public void KartSil(){
+    static public void KartSil(){
         Console.WriteLine(" Öncelikle silmek istediğiniz kartı seçmeniz gerekiyor.");
         Console.WriteLine("Kart Başlığı Yazınız: ");
         string baslik = Console.ReadLine();
@@ -39,10 +39,10 @@ class KartOzellikleri:Kartım{
             }
         }
     }
-    public void KartGuncelle(){
+    static public void KartGuncelle(){
 
     }
-    public void KartTasi(){
+    static public void KartTasi(){
         Console.WriteLine(" Öncelikle taşımak istediğiniz kartı seçmeniz gerekiyor.");
         Console.WriteLine("Kart Başlığı Yazınız: ");
         string baslik = Console.ReadLine();
@@ -87,7 +87,7 @@ class KartOzellikleri:Kartım{
             }
         }
     }
-    public void BoardListele(){
+    static public void BoardListele(){
 
     }
 
