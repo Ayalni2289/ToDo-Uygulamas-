@@ -12,4 +12,6 @@
     public string Baslik { get => baslik; set => baslik = value; }
     public string Icerik { get => icerik; set => icerik = value ;}
     public Dictionary<int, string> AtananKisiID { get => atananKisiID; set => atananKisiID = value; }
+    // 1: Ali
+    // 2: Mehmet
 }

@@ -1,6 +1,8 @@
+Menu.MenuGoster();
 class Menu{
 
-    public void MenuGoster(){
+   static public void MenuGoster(){
+        Console.WriteLine("Lütfen yapmak istediğiniz işlemi seçiniz: ");
         Console.WriteLine("1. Board Listele");
         Console.WriteLine("2. Board'a Kart Ekle");
         Console.WriteLine("3. Board'dan Kart Sil");
@@ -8,4 +10,3 @@ class Menu{
         Console.WriteLine("0. Çıkış");
     }
 }
-
