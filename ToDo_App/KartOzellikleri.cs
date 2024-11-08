@@ -1,42 +1,33 @@
-class KartOzellikleri:Kartım{
+class KartOzellikleri{
     
-    private List<Kartım> kartlar = new List<Kartım>();
+    private static List<Kartım> kartlar = new List<Kartım>();
+    public static void KartEkle(){
+        Kartım yeniKart = new Kartım();
+        Console.WriteLine("Başlık Giriniz: ");
+        yeniKart.Baslik = Console.ReadLine();
 
-    static public void KartEkle(){
-        Console.WriteLine("Baslik Giriniz: ");
-        string baslik = Console.ReadLine();
-        Baslik = baslik;
-        Console.WriteLine("Icerik Giriniz: ");
-        string icerik = Console.ReadLine();
-        Icerik = icerik;
+        Console.WriteLine("İçerik Giriniz: ");
+        yeniKart.Icerik = Console.ReadLine();
+
+        Console.WriteLine("Büyüklük Seçiniz -> XS(1),S(2),M(3),L(4),XL(5): ");
+        yeniKart.buyuklukEnum = (Kartım.BuyuklukEnum)Enum.Parse(typeof(Kartım.BuyuklukEnum), Console.ReadLine());
+
         Console.WriteLine("Kişi Seçiniz: ");
-        int kisiID = Convert.ToInt32(Console.ReadLine());
-        AtananKisiID.Add(kisiID, "Kart Sahibi");
-        kartlar.Add(new Kartım(){Baslik = Baslik, Icerik = Icerik, AtananKisiID = AtananKisiID});
+        
     }
     static public void KartSil(){
-        Console.WriteLine(" Öncelikle silmek istediğiniz kartı seçmeniz gerekiyor.");
-        Console.WriteLine("Kart Başlığı Yazınız: ");
+        Console.WriteLine("Silmek istediğiniz kartın başlığını giriniz: ");
         string baslik = Console.ReadLine();
-        Kartım kart = kartlar.Find(x => x.Baslik == baslik);
-        if(kart != null){
+        Kartım kart = kartlar.FirstOrDefault(k => k.Baslik == baslik);
+
+        if (kart != null)
+        {
             kartlar.Remove(kart);
             Console.WriteLine("Kart Silindi.");
         }
-        else{
-            Console.WriteLine(" Aradığınız krtiterlere uygun kart board'da bulunamadı. Lütfen bir seçim yapınız.");
-            Console.WriteLine("1. Silme İptal");
-            Console.WriteLine("2. Yeniden Dene");
-            int secim = Convert.ToInt32(Console.ReadLine());
-            switch (secim)
-            {
-                case 1:
-                    Console.WriteLine("Silme İşlemi İptal Edildi.");
-                    break;
-                case 2:
-                    KartSil();
-                    break;
-            }
+        else
+        {
+            Console.WriteLine("Kart bulunamadı.");
         }
     }
     static public void KartGuncelle(){
