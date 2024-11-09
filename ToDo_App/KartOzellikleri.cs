@@ -78,7 +78,7 @@ class KartOzellikleri{
         }
         catch (Exception innerEx)
         {
-            Console.WriteLine("Hata: "innerEx.Message);
+            Console.WriteLine("Hata: " +innerEx.Message);
             KartSil();
         }
     }
